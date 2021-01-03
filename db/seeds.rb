@@ -7,11 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts "Deleteing Old Users"
+puts "Deleteing Old Users And Instruments"
 User.destroy_all
+Instrument.destroy_all
 
-puts "Seeding users"
-User.create(username: "jonathan")
-User.create(username: "anthony")
+puts "Seeding Users"
+jonathan = User.create(username: "jonathan")
+anthony = User.create(username: "anthony")
 
-puts "Done" p
+puts "Seeding Instruments"
+Instrument.create(type_of: "guitar", brand: "Fender", model: "Stratocaster", year: 1967, user_id: anthony.id)
+Instrument.create(type_of: "banjo", brand: "Deering", model: "5-String", year: 2004, user_id: anthony.id)
+Instrument.create(type_of: "piano", brand: "Steinway", model: "Grand", year: 1934, user_id: jonathan.id)
+
+puts "Done"
