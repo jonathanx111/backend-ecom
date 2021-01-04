@@ -14,4 +14,4 @@ puts "Seeding users"
 User.create(username: "jonathan")
 User.create(username: "anthony")
 
-puts "Done" p
+puts "Done" 
