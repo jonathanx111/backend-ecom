@@ -1,4 +1,4 @@
 class Instrument < ApplicationRecord
   belongs_to :user
-  has_one :listing
+  has_one :listing, dependent: :destroy
 end
